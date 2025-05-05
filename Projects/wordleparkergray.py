@@ -1,9 +1,29 @@
+
 import random
+import nltk
+from nltk.corpus import words
 
+# Make sure you have the word list
+nltk.download('words')
+
+# Get the list of words
+word_list = words.words()
+
+# Filter for 5-letter alphabetic words
+five_letter_words = [word.lower() for word in word_list if len(word) == 5 and word.isalpha()]
 # Pick a word at random
-word_list = ["nymph","aglet","anode","ouija","leche","floog","Moist","gnome","aping"]
-hidden_word = random.choice(word_list)
-
+word_listold = ["nymph","aglet","anode","ouija","leche","floog","Moist","gnome","aping","apple", "brave", "crane", "dodge", "eagle", "flame", "grape", "hound", "inlet", "jolly",
+"kneel", "latch", "mirth", "noble", "orbit", "piano", "queen", "risky", "sheep", "trick",
+"urban", "vigor", "wrist", "xerox", "yacht", "zesty", "align", "blush", "cabin", "dealt",
+"envoy", "fable", "gleam", "hoist", "ideal", "jumps", "karma", "lemon", "magic", "nerdy",
+"ocean", "punch", "quilt", "rouge", "sassy", "tulip", "uncle", "vivid", "woven", "xenon",
+"yodel", "zebra", "angle", "blaze", "cliff", "drain", "event", "froze", "grind", "hatch",
+"ivory", "joint", "knife", "lunar", "mocha", "novel", "oxide", "plaza", "quack", "raven",
+"spike", "trend", "ultra", "verge", "waltz", "xylem", "yours", "zonal", "amber", "blond",
+"candy", "dizzy", "elite", "frost", "gloom", "haste", "input", "jelly", "koala", "leech",
+"mince", "naive", "occur", "pride", "quest", "rider", "siren", "tiger", "usher", "vapor",]
+hidden_word = random.choice(five_letter_words)
+print(hidden_word)
 # Repeat for 6 guesses
 for i in range(6):
     # Guess a word
