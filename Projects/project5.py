@@ -29,12 +29,57 @@ window.tracer(0)
 # TODO - set your background
 # TODO - set the starting value for your variable
 
-s1=create_sprite("kevin.gif", -150,0)
-set_background("beach")
-
+s1=create_sprite("kevingood", -150,0)
+set_background("summer")
+s2=create_sprite("potatogood", 150,0)
 # Section 3: Controls
 # TODO - define your controls
 # TODO - pick keys for each control
+
+def move_up():
+	s1.setheading(90)
+	s1.forward(10)
+   	 
+def move_down():
+	s1.setheading(270)
+	s1.forward(10)
+    
+def move_left():
+	s1.setheading(180)
+	s1.forward(10)
+    
+def move_right():    
+	s1.setheading(0)
+	s1.forward(10)
+
+window.onkeypress(move_up, "w")
+window.onkeypress(move_down, "s")
+
+window.onkeypress(move_left, "a")
+window.onkeypress(move_right, "d")
+
+
+def move_up():
+	s2.setheading(90)
+	s2.forward(10)
+   	 
+def move_down():
+	s2.setheading(270)
+	s2.forward(10)
+    
+def move_left():
+	s2.setheading(180)
+	s2.forward(10)
+    
+def move_right():    
+	s2.setheading(0)
+	s2.forward(10)
+
+window.onkeypress(move_up, "Up")
+window.onkeypress(move_down, "Down")
+
+window.onkeypress(move_left, "Left")
+window.onkeypress(move_right, "Right")
 
 # Section 4: Game Loop
 window.listen()
@@ -46,7 +91,8 @@ while True:
     
  	# TODO - code for automatic actions
 
-
+	if get_distance (s1,s2) < 50:
+		set_background("castle")
 
 
 
